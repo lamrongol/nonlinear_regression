@@ -68,7 +68,8 @@ func NonlinearRegression(tsv_file string,
 	// }
 	fmt.Println("target_file: ", tsv_file)
 	if record_file == "" {
-		record_file = filepath.Base(tsv_file) + "_result.tsv"
+		base := filepath.Base(tsv_file)
+		record_file = base[:len(base)-4] + "_result.tsv"
 	}
 	dependent_list := []float64{}
 	parameter_list := [][]float64{}
@@ -84,6 +85,9 @@ func NonlinearRegression(tsv_file string,
 	//first line
 	scanner.Scan()
 	line := strings.Split(scanner.Text(), "\t")
+	if line[len(line)-1] == "" {
+		line = line[:len(line)-1]
+	}
 	param_names := line[1:]
 	gene_num := len(param_names)
 	if minus_possible_list == nil {
