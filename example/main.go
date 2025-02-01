@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"io/fs"
 	"math"
-	"nonlinear_regression"
 	"os"
+
+	"github.com/lamrongol/nonlinear_regression"
 )
 
 const sample_file = "sample_data.tsv"

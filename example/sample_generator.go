@@ -4,9 +4,10 @@ import (
 	"log"
 	"math"
 	"math/rand"
-	"nonlinear_regression"
 	"os"
 	"strings"
+
+	"github.com/lamrongol/nonlinear_regression"
 )
 
 func generate_sample_data() {

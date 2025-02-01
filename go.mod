@@ -1,4 +1,4 @@
-module nonlinear_regression
+module github.com/lamrongol/nonlinear_regression
 
 go 1.23.4
 
