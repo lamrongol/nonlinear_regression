@@ -1,6 +1,6 @@
 module github.com/lamrongol/nonlinear_regression
 
-go 1.24
+go 1.24.1
 
 require github.com/lamrongol/regression v0.0.0-20250328110234-df95bdbc2d7e
 
