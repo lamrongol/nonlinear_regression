@@ -23,8 +23,8 @@ func generate_sample_data() {
 	for range DATA_NUM {
 		intercept := 200.0
 		x1 := 8000 + rand.Float64()*5000
-		x2 := 50 + rand.Float64()*6000
-		x3 := 0.10 + rand.Float64()/10
+		x2 := 5000 + rand.Float64()*60000
+		x3 := 6000 + rand.Float64()*8000
 		x4 := rand.Float64() * 124
 		x5 := rand.Float64()*80000000 + 1000
 		x6 := (rand.Float64()*9 + 1) / 8000
@@ -39,7 +39,7 @@ func generate_sample_data() {
 
 		f2s := nonlinear_regression.FloatToString
 		//x2 is unused
-		y := intercept + 2*x1 + 3*math.Exp(72*x3) + 5*x4*x4 + 7*math.Sqrt(x5) + 8*1.0/x6 + noise
+		y := intercept + 2*x1 + 6*x3 + 5*x4*x4 + 7*math.Sqrt(x5) + 8*1.0/x6 + noise
 		// y := intercept + 2*x1 + 3*x3*x3 + 6*x4 + 7*x5 + 8*x6 //+ noise
 		wf.WriteString(strings.Join([]string{f2s(y), f2s(x1), f2s(x2), f2s(x3), f2s(x4), f2s(x5), f2s(x6)}, "\t") + "\n")
 	}

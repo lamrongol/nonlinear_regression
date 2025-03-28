@@ -55,13 +55,14 @@ func (g *GeneEnum) Calc(x float64) float64 {
 		return x * x
 	case "Cubed":
 		return x * x * x
-	case "Exp":
-		//TODO
-		val := math.Exp(g.scale_factor * x)
-		if math.IsInf(val, 1) {
-			return PracticalMax
-		}
-		return val
+	//TODO Exp may cause too big value
+	// case "Exp":
+	// 	//TODO
+	// 	val := math.Exp(g.scale_factor * x)
+	// 	if math.IsInf(val, 1) {
+	// 		return PracticalMax
+	// 	}
+	// 	return val
 	// case "ExpSquared":
 	// 	return math.Exp(g.scale_factor * x * x)
 	case "ExpMinus":
@@ -102,7 +103,9 @@ var minus_allowable_gene_list = []*GeneEnum{
 	new_gene_enum("Linear", 1, true),
 	new_gene_enum("Squared", 1, true),
 	new_gene_enum("Cubed", 1, true),
-	new_gene_enum("Exp", 2, true),
+	//TODO Exp may cause too big value
+	// new_gene_enum("Exp", 2, true),
+
 	// new_gene_enum("ExpSquared", 2, true),
 	new_gene_enum("ExpMinus", 2, true),
 	// new_gene_enum("ExpMinusSquared", 2, true),
